@@ -103,7 +103,7 @@ def disease_no_duplicates(patienten_waardes):
                 value = value.split(";")[1:]
                 # Er wordt gekeken naar iedere ziekte die in de value staat
                 for i in value:
-                    # Alle spaties worden aan de linkse kant weggehaald
+                    # Alle spaties worden aan de linker kant weggehaald
                     i = i.lstrip()
                     # Er wordt gekeken of de ziekte niet al een keer voorkomt in de lijst
                     if i not in value_geen_duplicatie:
@@ -272,7 +272,7 @@ def metaboliet_ziekte_geen_duplicatie(patient_dis_and_meta):
                 # Als de metaboliet al voorkomt in de lijst wordt de volgende for loop begonnen
                 if key in geen_duplicatie_meta_ziekte:
                     continue
-                # Er wordt gesplits op ; en de eerste waarde wordt weggehaald aangezien dit
+                # Er wordt gesplitst op ; en de eerste waarde wordt weggehaald aangezien dit
                 # een spatie is geworden afgesloten met een komma
                 value = value.split(";")[1:]
                 for i in value:
@@ -369,7 +369,7 @@ def meta_and_dis_no_duplicate(patient_dis_meta):
     """
     print("===", patient_dis_meta)
     meta_dis_geen_duplicatie = {}
-    # loopt door de lijst met dictionarys
+    # loopt door de lijst met dictionaries
     for i in patient_dis_meta:
         # loopt door de dictionarys heen met metaboliet als key en ziekte als value
         for key, value in i.items():
@@ -395,7 +395,7 @@ def get_values(connection, cursor, meta_dis_geen_duplicatie, meta_ziekte_ids):
             # Er wordt gesplits op ; en de eerste waarde wordt weggehaald aangezien dit
             # een spatie is geworden afgesloten met een komma
             value = value.split(";")[1:]
-            # loopt tegelijk door de values van allebei de dictionarys heen
+            # loopt tegelijk door de values van allebei de dictionaries heen
             for i, i2 in zip(value, value2):
                 # Gaat naar een volgende functie toe
                 compare(connection, cursor, key, i, key2, i2)
@@ -417,7 +417,7 @@ def compare(connection, cursor, metaboliet, ziekte, metaboliet_id, ziekte_id):
     Entrez.email = "A.N.Other@example.com"
     # Zoekwoorden om te textminen
     zoekwoorden = metaboliet + " AND " + ziekte
-    # Query om te textmenen
+    # Query om te textminen
     finds = Entrez.esearch(db="pubmed",
                            term=zoekwoorden)
     resultaat = Entrez.read(finds)
