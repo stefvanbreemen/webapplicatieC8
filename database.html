@@ -1,0 +1,60 @@
+<!--
+Deze applicatie is geschreven door Eva Nijhuis, Sven Lukassen, Stef van Breemen en Danae Dekker
+
+Dit HTML bestand bevat de visualisatie pagina
+
+Versie: 1.0
+Datum: 05-06-2022
+
+-->
+
+<!--Base.html wordt als base gebruikt-->
+{% extends "base.html" %}
+<!--Titel uniek voor deze webpagina-->
+{% block title %}Visualisatie{% endblock %}
+<!--Content voor deze webpagina-->
+{% block content %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <body>
+
+        <!-- Navbar -->
+        <nav>
+        <div class="w3-top">
+          <div class="w3-bar w3-grey w3-card w3-left-align w3-large">
+            <a href="http://127.0.0.1:5000/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">Home</a>
+            <a href="http://127.0.0.1:5000/zoek" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-blue">Zoeken</a>
+            <a href="http://127.0.0.1:5000/visualisatie" class="w3-bar-item w3-button w3-padding-large w3-blue">Visualisatie</a>
+          </div>
+        </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="w3-container w3-grey w3-center" style="padding:25px 16px"></header>
+
+
+        <!-- Tekst op de pagina -->
+        <div class="w3-row-padding w3-padding-63 w3-container"></div>
+        <p align="center"><b>  Visualisatie van metabolieten met bijbehorende ziektes weergegeven in een graaf</b></p>
+        <p align="center"> Om een beter beeld te krijgen kunt u inzoomen door te scrollen</p>
+
+        <!-- Voegt een zwarte lijn toe -->
+        <hr color="black">
+
+        <!-- Toevoegen van de graaf op de pagina -->
+        {% include "my_graph.html" %}
+
+
+    </body>
+
+
+{% endblock %}
+
+
